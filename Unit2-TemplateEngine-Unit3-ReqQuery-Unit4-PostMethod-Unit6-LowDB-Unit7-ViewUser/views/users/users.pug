@@ -1,0 +1,14 @@
+extends ../layout/common
+
+block content
+    form(action="/users/search", method="GET")
+        input(type="text", name="name", value=dataSearch) 
+        button Search
+    each user in users
+        span= user.name + ' ' + user.phone
+        span &nbsp
+        a(href=`/users/view/${user.id}`) View
+        br
+
+//- name: atribue của input
+//- "name": tên query
