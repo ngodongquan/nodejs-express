@@ -29,6 +29,10 @@ app.use('/auth', authRoute)
 const userRoute = require('./routes/user.routes')
 app.use('/users', middlewareAuth.requireAuth, userRoute)
 
+//product Routes
+const productRoute = require('./routes/product.routes')
+app.use('', productRoute)
+
 //Bài 2: Template Engine
 app.get('/', function (req, res) {
     res.render('index', {
