@@ -20,8 +20,14 @@ router.get('/create', controller.goToPageCreate)
 
 router.post('/create', validate.validataUserCreate,  controller.createUser)
 
+router.get('/update/:id',  controller.updateUser)
+
+router.post('/finallyUpdate/:id', controller.finallyUpdateUser)
 //Bài 7: View User
 router.get('/view/:id', controller.viewUser)
+
+// Delete User
+router.get('/delete/:id', controller.deleteUser)
 
 module.exports = router
 

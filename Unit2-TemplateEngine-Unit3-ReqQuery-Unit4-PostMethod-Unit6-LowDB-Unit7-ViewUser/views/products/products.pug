@@ -1,0 +1,31 @@
+extends ../layout/common
+
+block content
+    .d-flex.flex-wrap
+        each product in products
+                .card(style='width: 18rem;margin-left: 20px;margin-top: 20px')
+                    img.card-img-top(src=`${product.image}` alt='...')
+                    .card-body
+                        h5.card-title= product.name
+                        p.card-text= product.price
+                        a.btn.btn-primary(href='#') Add To Cart
+    nav(aria-label='Page navigation example')
+            ul.pagination
+                li.page-item
+                    if(currentPage - 1 >= 1)
+                        a.page-link(href=`products?page=${currentPage - 1}`) Previous
+                    else if (currentPage - 1 < 1)
+                        a.page-link(href=`products?page=${currentPage}`) Previous
+                li.page-item
+                    a.page-link(href=`products?page=${currentPage}`)=currentPage
+                li.page-item
+                    if (currentPage + 1 <= lengthOfPage)
+                        a.page-link(href=`products?page=${currentPage + 1}`)=currentPage + 1
+                li.page-item
+                    if (currentPage + 2 <= lengthOfPage )
+                        a.page-link(href=`products?page=${currentPage + 2}`)=currentPage + 2
+                li.page-item
+                    if(currentPage + 1 <= lengthOfPage)
+                        a.page-link(href=`products?page=${currentPage + 1}`) Next
+                    else if (currentPage + 1 > lengthOfPage)
+                        a.page-link(href=`products?page=${currentPage}`) Next          

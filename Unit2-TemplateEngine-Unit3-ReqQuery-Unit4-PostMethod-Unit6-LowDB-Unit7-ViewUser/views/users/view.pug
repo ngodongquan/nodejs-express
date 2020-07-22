@@ -1,10 +1,12 @@
 extends ../layout/common
 
 block content
-    h1 View User
-    label Email
-    span= user.email
-    label Name
-    span= user.name
-    label Phone
-    span= user.phone
+    .d-flex.flex-wrap
+        .card(style='width: 18rem;margin-left: 20px;margin-top: 20px')
+            img.card-img-top(src=`${user.avatarUrl}` alt='...')
+            .card-body
+                h5.card-title= user.email
+                p.card-text= user.username
+                p.card-0.text= user.fullname
+                p.card-text= user.birthday
+                p.card-text= user.status

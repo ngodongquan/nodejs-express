@@ -9,10 +9,12 @@ block content
         .form-group
             label(for="email") Email
             input#email.form-control(type="text", name="email", value=value ? value.email : '')
-            label(for="email") Password
+            label(for="password") Password
             input#password.form-control(type="password", name="password", value=value ? value.password : '')
-            label(for="name") Name
-            input#name.form-control(type="text", name="name", value=value ? value.name : '')
-            label(for="phone") Phone
-            input#phone.form-control(type="text", name="phone", value=value ? value.phone : '')
+            label(for="name") User Name
+            input#name.form-control(type="text", name="username", value=value ? value.username : '')
+            label(for="fullname") Full name
+            input#phone.form-control(type="text", name="fullname", value=value ? value.fullname : '')
+            label(for="birthday") Birthday
+            input#phone.form-control(type="text", name="birthday", value=value ? value.birthday : '')
         button Create

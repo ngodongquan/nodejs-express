@@ -1,14 +1,29 @@
 extends ../layout/common
 
 block content
+    //- form(action="/users/search", method="GET")
+    //-     input(type="text", name="name", value=dataSearch) 
+    //-     button Search
+    //- each user in users
+    //-     span= user.name + ' ' + user.phone
+    //-     span &nbsp
+    //-     a(href=`/users/view/${user.id}`) View
+    //-     br
     form(action="/users/search", method="GET")
         input(type="text", name="name", value=dataSearch) 
         button Search
-    each user in users
-        span= user.name + ' ' + user.phone
-        span &nbsp
-        a(href=`/users/view/${user.id}`) View
-        br
-
+    .d-flex.flex-wrap
+        each user in users
+                .card(style='width: 18rem;margin-left: 20px;margin-top: 20px')
+                    img.card-img-top(src=`${user.avatarUrl}` alt='...')
+                    .card-body
+                        h5.card-title= user.email
+                        p.card-text= user.username
+                        p.card-text= user.fullname
+                        p.card-text= user.birthday
+                        p.card-text= user.status
+                        a.btn.btn-primary(href=`/users/view/${user.id}`) View User
+                        a.btn.btn-primary(href=`/users/delete/${user.id}`)(style='margin-left: 5px') Delete User
+                        a.btn.btn-primary(href=`/users/update/${user.id}`)(style='margin-left: 5px') Update User
 //- name: atribue của input
 //- "name": tên query

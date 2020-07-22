@@ -1,6 +1,9 @@
 //low db
 const db = require('../db')
 
+// product model from mongodb
+const ListUser = require('../model/listUser')
+
 module.exports = {
     listProducts: (req, res, next) => {
         var currentPage = req.query.page ? parseInt(req.query.page) : 1 //n
@@ -23,5 +26,11 @@ module.exports = {
             lengthOfPage: lengthOfPage,
             currentPage: currentPage
         })
+        // })
+        // ListUser.find().then(function(ListUsers) {
+        //     res.render('products/products', {
+        //         products: ListUsers
+        //     })
+        // })
     }
 }
